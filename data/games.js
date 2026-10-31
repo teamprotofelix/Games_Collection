@@ -137,5 +137,26 @@ window.EON_GAMES = [
     "description": "특허·실용신안 심사기준을 OX 퀴즈 슈팅으로 풀어보는 지식 아케이드. 알맞은 판단으로 미션을 돌파하세요.",
     "short": "정답을 겨누는 순간, 심사기준이 실력이 된다.",
     "guide": "games/striker.html"
+  },
+  {
+    "id": "witch-heal",
+    "order": 9,
+    "name": "마녀의 여행",
+    "en": "WITCH'S JOURNEY · 작은 행복의 길",
+    "eyebrow": "A COZY MAGIC JOURNEY",
+    "genre": "힐링",
+    "genres": [
+      "힐링",
+      "모험"
+    ],
+    "color": "amber",
+    "play": "https://game-witch-heal.moip.ai.kr/",
+    "repo": "https://github.com/teamprotofelix/Game_Witch_Heal",
+    "description": "숲과 호수, 달빛 정원과 해안을 산책하며 꽃·별가루를 모으고 동물 친구들을 만나는 따뜻한 힐링 점프 게임.",
+    "short": "서두르지 않아도 좋아요. 작은 행복을 모으는 네 번의 산책.",
+    "detail_art": "assets/details/witch-heal-full.webp",
+    "supplied_art": true,
+    "new": true,
+    "guide": "games/witch-heal.html"
   }
 ];

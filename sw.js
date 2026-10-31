@@ -1,5 +1,5 @@
 /* Same-origin portal shell only; external games are NEVER cached or intercepted. */
-const CACHE = 'eon-games-portal-33fb677a6358';
+const CACHE = 'eon-games-portal-d00aa507bf3a';
 const SHELL = [
   "./",
   "./index.html",
@@ -20,6 +20,7 @@ const SHELL = [
   "./games/dutchman.html",
   "./games/battles.html",
   "./games/striker.html",
+  "./games/witch-heal.html",
   "./assets/covers/witch.webp",
   "./assets/covers/chrono.webp",
   "./assets/covers/spider.webp",
@@ -27,7 +28,9 @@ const SHELL = [
   "./assets/covers/starlight.webp",
   "./assets/covers/dutchman.webp",
   "./assets/covers/battles.webp",
-  "./assets/covers/striker.webp"
+  "./assets/covers/striker.webp",
+  "./assets/covers/witch-heal.webp",
+  "./assets/details/witch-heal-full.webp"
 ];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(SHELL)).then(() => self.skipWaiting()));

@@ -1,10 +1,10 @@
 # EON Games — Game Portal
 
-8개의 독립 게임 사이트를 연결하는 **GitHub Pages용 순수 정적 포털**입니다. 원본 게임 코드와 데이터는 수정하지 않습니다.
+9개의 독립 게임 사이트를 연결하는 **GitHub Pages용 순수 정적 포털**입니다. 원본 게임 코드와 데이터는 수정하지 않습니다.
 
 ## 포함 기능
 
-- **게임 8종 소개**: 메인 카드, 별도 안내 페이지 8개, 원본 GitHub 링크, 게임 바로 실행
+- **게임 9종 소개**: 메인 카드, 별도 안내 페이지 9개, 원본 GitHub 링크, 게임 바로 실행
 - **빠른 탐색**: 키워드 검색(단축키 `/`), 장르 필터, 이름·최근 실행 정렬
 - **브라우저 편의 기능**: 즐겨찾기, 최근 실행 게임, 조건에 맞는 랜덤 추천
 - **모바일 지원**: 320px부터 레이아웃 대응, 터치 접근, 모바일 상단 '게임 목록/이용 안내' 링크
@@ -24,8 +24,9 @@
 | 금광을 찾아서 | https://game-lostdutchman.moip.ai.kr/ | https://github.com/teamprotofelix/Game_LostDutchman |
 | 배틀최강전 | https://enter.moip.ai.kr/battles/index.html | https://github.com/teamprotofelix/enter |
 | 심사기준 스트라이커 | https://enter.moip.ai.kr/exam_striker/index.html | https://github.com/teamprotofelix/enter |
+| **마녀의 여행** | https://game-witch-heal.moip.ai.kr/ | https://github.com/teamprotofelix/Game_Witch_Heal |
 
-**안내용 콘셉트 그림은 원본 게임 화면과 다를 수 있습니다.** 각 게임 설명은 저장소의 공개 README 및 HTML을 바탕으로 제작했습니다. 실제 운영 버전에서 변경되었을 수 있습니다.
+**안내용 콘셉트 그림은 원본 게임 화면과 다를 수 있습니다.** 단, 마녀의 여행 카드와 안내 페이지 이미지는 사용자가 제공한 게임 타이틀 이미지를 WebP로 최적화한 것입니다. 각 게임 설명은 저장소의 공개 README 및 HTML을 바탕으로 제작했습니다. 실제 운영 버전에서 변경되었을 수 있습니다.
 
 ## GitHub Pages 업로드
 
@@ -33,7 +34,7 @@
 2. 압축을 푼 폴더 **안의 파일 및 하위 폴더 전체**(`index.html`, `games/`, `assets/`, `data/`, `.nojekyll` 등)를 GitHub 저장소 **루트**에 올립니다.
 3. GitHub에서 `Settings → Pages → Build and deployment → Deploy from a branch → main → /(root)`를 선택합니다.
 4. GitHub Pages 주소 (`https://<사용자>.github.io/<저장소>/`)로 접속합니다. 프로젝트 경로에서도 상대 경로가 유지됩니다.
-5. 커스텀 도메인을 사용할 경우 Pages에서 Custom domain과 DNS를 별도로 설정합니다. **아직 지정된 도메인이 없어 `CNAME`은 넣지 않았습니다.**
+5. 커스텀 도메인을 사용할 경우 Pages에서 Custom domain과 DNS를 별도로 설정합니다. **현재 사용자 지정 도메인 `game-collection.moip.ai.kr`의 `CNAME` 파일이 포함되어 있습니다.** DNS 설정은 운영자가 별도로 관리합니다.
 
 ### 로컬 실행
 
@@ -69,7 +70,8 @@ index.html / styles.css / app.js   포털 메인 화면 및 기능
  data/games.json                   게임 콘텐츠의 단일 편집 원본
  data/games.js                     브라우저에서 사용하는 자동 생성 목록
  games/*.html                      각 게임별 안내 페이지
- assets/covers/*.webp              게임 표지 8장
+ assets/covers/*.webp              게임 표지 9장
+ assets/details/witch-heal-full.webp 신규 게임 전체 타이틀 아트
  assets/portal-hero.webp           메인 비주얼
  assets/icon-192.png, icon-512.png  PWA용 EON 앱 아이콘
  favicon.svg                       브라우저 아이콘
@@ -77,6 +79,7 @@ index.html / styles.css / app.js   포털 메인 화면 및 기능
  .nojekyll                         GitHub Pages Jekyll 비활성화
  build_site.py                     게임 추가용 정적 페이지 생성기
  README.md / VALIDATION.md         문서
+ CNAME / .nojekyll                 커스텀 도메인 및 GitHub Pages 설정
 ```
 
 ## 저장 정책 및 이전 버전 즐겨찾기
@@ -85,4 +88,12 @@ index.html / styles.css / app.js   포털 메인 화면 및 기능
 
 ## 배포 검증 주의
 
-이 환경에서는 Chromium의 로컬 HTTP 탐색이 관리자 정책으로 차단되어 브라우저 HTML 인메모리 검사를 수행했습니다. **GitHub Pages 실배포, PWA 설치/오프라인 갱신, Android/iOS 실기기, 각 운영 게임 URL 접속 검증은 완료되지 않았습니다.** 확인 범위는 `VALIDATION.md`를 참고하세요.
+이번 v3은 Chromium 인메모리 UI 검사를 수행했습니다. 로컬 HTTP 접속은 실행 환경의 정책으로 차단되어 실제 서버 접속 검사는 수행하지 못했습니다. **GitHub Pages 실배포, PWA 설치/오프라인 갱신, Android/iOS 실기기, 각 운영 게임 URL 접속 검증은 완료되지 않았습니다.** 확인 범위는 `VALIDATION.md`를 참고하세요.
+
+## v3.0 — 마녀의 여행 추가 (2026-10-31)
+
+- **9번째 게임: 마녀의 여행** (`witch-heal`) 추가. 종전 마녀의 사냥과 서로 다른 독립 게임입니다.
+- 첨부된 타이틀 이미지를 1200×675 WebP 카드 + 1280×960 WebP 상세 이미지로 변환했습니다. 원본 대용량 PNG는 배포 ZIP에 포함하지 않습니다.
+- 9번째 게임 개별 안내 페이지에 4개 장소·아이템·동물 친구·장애물 점프·PC/모바일 조작 설명을 포함했습니다.
+- `build_site.py`의 이전/다음 게임 탐색에서 하드코딩된 8개 순환을 실제 게임 수로 변경했습니다.
+- 사용자 지정 도메인의 `CNAME`을 최신 저장소와 동일하게 유지합니다.
